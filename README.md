@@ -1,4 +1,4 @@
-# Elmobot [WIP] [![CodeFactor](https://www.codefactor.io/repository/github/servusdei2018/elmobot/badge)](https://www.codefactor.io/repository/github/servusdei2018/elmobot) [![Go Reference](https://pkg.go.dev/badge/github.com/servusdei2018/elmobot.svg)](https://pkg.go.dev/github.com/servusdei2018/elmobot)
+# Elmobot [WIP] [![CircleCI](https://dl.circleci.com/status-badge/img/gh/servusdei2018/elmobot/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/servusdei2018/elmobot/tree/main) [![CodeFactor](https://www.codefactor.io/repository/github/servusdei2018/elmobot/badge)](https://www.codefactor.io/repository/github/servusdei2018/elmobot) [![Go Reference](https://pkg.go.dev/badge/github.com/servusdei2018/elmobot.svg)](https://pkg.go.dev/github.com/servusdei2018/elmobot)
 
 A general purpose Discord bot made for personal use. Work in progress.
 
