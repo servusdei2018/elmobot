@@ -1,0 +1,25 @@
+version: 2.1
+
+orbs:
+  go: circleci/go@1.11.0
+
+jobs:
+  build_and_test: # this can be any name you choose
+    executor:
+      name: go/default # Use the default executor from the orb
+      tag: '1.21' # Specify a version tag
+    steps:
+      - checkout # checkout source code
+      - go/load-cache # Load cached Go modules.
+      - go/mod-download # Run 'go mod download'.
+      - go/save-cache # Save Go modules to cache.
+      - go/test: # Runs 'go test ./...' but includes extensive parameterization for finer tuning.
+          covermode: atomic
+          failfast: true
+          race: true
+          timeout: 10m
+
+workflows:
+  main:
+    jobs:
+      - build_and_test
