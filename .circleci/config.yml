@@ -9,11 +9,11 @@ jobs:
       name: go/default # Use the default executor from the orb
       tag: '1.18' # Specify a version tag
     steps:
-      - checkout # checkout source code
-      - go/load-cache # Load cached Go modules.
-      - go/mod-download # Run 'go mod download'.
-      - go/save-cache # Save Go modules to cache.
-      - go/test: # Runs 'go test ./...' but includes extensive parameterization for finer tuning.
+      - checkout # Checkout source code
+      - go/load-cache # Load cached Go modules
+      - go/mod-download # Run 'go mod download'
+      - go/save-cache # Save Go modules to cache
+      - go/test:
           covermode: atomic
           failfast: true
           race: true
