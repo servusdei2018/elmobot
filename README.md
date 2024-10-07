@@ -12,6 +12,14 @@ DISCORD_TOKEN=YOUR_TOKEN_HERE
 
 then run `./run.sh`. Output will be logged to `nohup.out`.
 
+## Configuration
+
+To add a cronjob to restart the bot automatically, run `crontab -e` and then add the following line:
+
+```crontab
+0 0 * * 0 systemctl restart --user elmobot
+```
+
 ## License
 
 ```
