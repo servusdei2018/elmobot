@@ -6,24 +6,14 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/servusdei2018/elmobot/pkg/commands"
-	"github.com/servusdei2018/elmobot/pkg/handlers"
-
 	"github.com/bwmarrin/discordgo"
+
+	"github.com/servusdei2018/elmobot/pkg/commands"
 )
 
 var (
 	token = flag.String("token", "", "Discord bot token")
-
-	s *discordgo.Session
-
-	commands_ = []*discordgo.ApplicationCommand{
-		commands.Ping,
-	}
-
-	handles_ = map[string]func(s *discordgo.Session, i *discordgo.InteractionCreate){
-		"ping": handlers.Ping,
-	}
+	s     *discordgo.Session
 )
 
 func init() {
@@ -36,7 +26,7 @@ func init() {
 	}
 
 	s.AddHandler(func(s *discordgo.Session, i *discordgo.InteractionCreate) {
-		if h, ok := handles_[i.ApplicationCommandData().Name]; ok {
+		if h, ok := commands.Handlers[i.ApplicationCommandData().Name]; ok {
 			h(s, i)
 		}
 	})
@@ -52,8 +42,8 @@ func main() {
 	}
 
 	log.Println("adding commands...")
-	registeredCommands := make([]*discordgo.ApplicationCommand, len(commands_))
-	for i, v := range commands_ {
+	registeredCommands := make([]*discordgo.ApplicationCommand, len(commands.Cmds))
+	for i, v := range commands.Cmds {
 		cmd, err := s.ApplicationCommandCreate(s.State.User.ID, "", v)
 		if err != nil {
 			log.Panicf("error creating command '%v': %v", v.Name, err)
