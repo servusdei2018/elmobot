@@ -1,24 +1,6 @@
-# Elmobot [WIP] [![CircleCI](https://dl.circleci.com/status-badge/img/gh/servusdei2018/elmobot/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/servusdei2018/elmobot/tree/main) [![CodeFactor](https://www.codefactor.io/repository/github/servusdei2018/elmobot/badge)](https://www.codefactor.io/repository/github/servusdei2018/elmobot) [![Go Reference](https://pkg.go.dev/badge/github.com/servusdei2018/elmobot.svg)](https://pkg.go.dev/github.com/servusdei2018/elmobot)
+# Elmobot [![CircleCI](https://dl.circleci.com/status-badge/img/gh/servusdei2018/elmobot/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/servusdei2018/elmobot/tree/main) [![CodeFactor](https://www.codefactor.io/repository/github/servusdei2018/elmobot/badge)](https://www.codefactor.io/repository/github/servusdei2018/elmobot) [![Go Reference](https://pkg.go.dev/badge/github.com/servusdei2018/elmobot.svg)](https://pkg.go.dev/github.com/servusdei2018/elmobot)
 
-A general purpose Discord bot made for personal use. Work in progress.
-
-## Installation
-
-After downloading the source code, you may build the project by running `./build.sh`. Create a file `.env` with the contents:
-
-```
-DISCORD_TOKEN=YOUR_TOKEN_HERE
-```
-
-then run `./run.sh`. Output will be logged to `nohup.out`.
-
-## Configuration
-
-To add a cronjob to restart the bot automatically, run `crontab -e` and then add the following line:
-
-```crontab
-0 0 * * 0 systemctl restart --user elmobot
-```
+A general purpose Discord bot.
 
 ## License
 
