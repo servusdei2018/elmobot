@@ -1,7 +1,6 @@
 package main
 
 import (
-	"flag"
 	"log"
 	"os"
 	"os/signal"
@@ -12,15 +11,14 @@ import (
 )
 
 var (
-	token = flag.String("token", "", "Discord bot token")
-	s     *discordgo.Session
+	s *discordgo.Session
 )
 
 func init() {
-	flag.Parse()
+	token := os.Getenv("DISCORD_TOKEN")
 
 	var err error
-	s, err = discordgo.New("Bot " + *token)
+	s, err = discordgo.New("Bot " + token)
 	if err != nil {
 		log.Fatalf("error connecting: %v", err)
 	}
