@@ -3,7 +3,7 @@
 all: build
 
 build:
-	go build -o bin/elmobot ./cmd/elmobot
+	go build -o bin/elmobot ./cmd/elmo
 
 clean:
 	rm -rf bin

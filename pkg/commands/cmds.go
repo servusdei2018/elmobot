@@ -9,9 +9,11 @@ import (
 var (
 	Cmds = []*discordgo.ApplicationCommand{
 		Ping,
+		Ask,
 	}
 
 	Handlers = map[string]func(s *discordgo.Session, i *discordgo.InteractionCreate){
 		"ping": handlers.Ping,
+		"ask":  handlers.Ask,
 	}
 )
