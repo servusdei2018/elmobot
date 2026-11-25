@@ -15,7 +15,7 @@ import (
 )
 
 const (
-	defaultModel       = "meta/llama-4-maverick-17b-128e-instruct"
+	defaultModel       = "minimaxai/minimax-m3.1-flash"
 	defaultTemperature = 1.0
 	maxMessageLength   = 2000
 	updateInterval     = 500 * time.Millisecond
